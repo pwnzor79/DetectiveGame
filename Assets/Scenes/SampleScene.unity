@@ -1142,7 +1142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 37.25, y: -68.92}
+  m_AnchoredPosition: {x: 37.25, y: -71.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &906892898
@@ -2381,6 +2381,7 @@ MonoBehaviour:
   - {fileID: 1003087830}
   - {fileID: 930651703}
   - {fileID: 1982808313}
+  slider: {fileID: 1899687394}
 --- !u!4 &1585456327
 Transform:
   m_ObjectHideFlags: 0

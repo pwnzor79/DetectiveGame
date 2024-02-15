@@ -5,7 +5,8 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 
-
+//https://www.youtube.com/playlist?list=PL3viUl9h9k78KsDxXoAzgQ1yRjhm7p8kl
+//this was used as a reference for the initial creation of the dialogue system
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
@@ -19,6 +20,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("choices UI")]
     [SerializeField] private GameObject[] choices;
+    [SerializeField] private GameObject slider;
 
     private TextMeshProUGUI[] choicesText;
 
@@ -44,6 +46,7 @@ public class DialogueManager : MonoBehaviour
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        slider.SetActive(false);
 
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -174,6 +177,16 @@ public class DialogueManager : MonoBehaviour
             choices[index].gameObject.SetActive(true);
             choicesText[index].text = choice.text;
             index++;
+        }
+
+        //hide the slider if we have less than 5 choices
+        if(index < 5)
+        {
+            slider.SetActive(false);
+        }
+        else
+        {
+            slider.SetActive(true);
         }
 
         //hide leftover choice slots
